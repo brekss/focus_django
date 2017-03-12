@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
+
 <head>
     {% load static %}
     {% load focus_extra %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Focus</title>
-    <link href="{% static 'focus/css/bootstrap-theme.min.css'%}" rel="stylesheet">
     <link href="{% static 'focus/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'focus/css/index.css'%}" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="{% static 'focus/img/favicon.ico' %}"/>
 </head>
 <body>
-
+<div class="allcontain">
 <header>
 <!--top_bar-->
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default " role="navigation">
     	<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -26,13 +26,13 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img height="50px" src="{% static 'focus/img/focus.cn.png' %}"></a>
+				<a class="navbar-brand" href="#"><img src="{% static 'focus/img/focus.cn.png' %}"></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right"  id="r-top">
                     {% if category == "news" or not category %}
                         <li class="selected"><a href="{% url 'news_page' 1 %}">资讯</a></li>
                     {% else %}
@@ -63,8 +63,7 @@
                         <li class="basic"><a href="{% url 'marketing_page' '1' %}">市场营销</a></li>
                     {% endif %}
 
-{#                    <li class="collection"><a href="#">Login</a></li>#}
-{#                    <li class="dropdown"><a href="#">Login</a></li>#}
+
 				</ul>
 
 			</div><!-- /.navbar-collapse -->
@@ -81,9 +80,9 @@
                   <img class="media-object" src="{{ article.picture_link }}">
                 </a>
               </div>
-              <div class="media-body">
+              <div class="media-body" id="desc">
                   <h4 class="article_title"><a href="{{ article.article_link }}">{{ article.article_title }}</a></h4>
-                  <div class="article_desc"><a href="{{ article.article_link }}">{{ article.article_desc }}</a></div>
+                  <div class="article_desc" id="sdsd"><a href="{{ article.article_link }}">{{ article.article_desc }}</a></div>
                   <div class="article_info">{{ article.article_date | strftime }}&nbsp;&nbsp;|&nbsp;&nbsp;From:
                       <a href="{{ article.article_link }}">{{ article.article_source }}</a>
                   </div>
@@ -116,7 +115,7 @@
         {% endif %}
     </div>
 </div>
-
+</div>
 <script src="{% static 'focus/js/jquery-3.1.1.min.js' %}"></script>
 <script src="{% static 'focus/js/index.js' %}"></script>
 <script src="{% static 'focus/js/bootstrap.min.js' %}"></script>

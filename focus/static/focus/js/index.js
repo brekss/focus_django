@@ -1,27 +1,15 @@
 /**
  * Created by haohao on 17-3-4.
  */
+var artdesc=document.getElementById("sdsd");
+var desc=document.getElementById("desc")
+(function(){
+    artdesc.style.display="none";
+    desc.style.display="none";
+
+})();
 
 $(document).ready(function(){
-
-    $(".dropdown").hover(
-
-        function() {
-
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
-
-            $(this).toggleClass('open');
-
-        },
-
-        function() {
-
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
-
-            $(this).toggleClass('open');
-
-        }
-
-    );
+    $(".article_desc").hide();
 
 });
